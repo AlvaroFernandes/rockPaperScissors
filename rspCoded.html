@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div>
+        <div class="scoreBord">
+            <h1>Score Bord</h1>
+            <div class="userScore">
+                User: <span id="userScore"></span>
+            </div>
+            <div class="computerScore">
+                Computer: <span id="computerScore"></span>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        let results = ['r', 'p', 's'];
+
+        let userWin = 0;
+        let computerWin = 0;
+        let tie = 0;
+
+
+
+        for (let i = 0; userWin < 3 && computerWin < 3; i++) {
+
+            let userResult = prompt('choose r, p or s');
+
+            let computerResult = Math.floor(Math.random() * 3);
+
+            let computerLetter = results[computerResult];
+
+            console.log(computerResult);
+            if (computerLetter === userResult) {
+                alert("It's a tie!");
+                tie = tie + 1;
+                alert(tie + " tie(s)")
+            }
+
+            if (userResult === "r" && computerLetter === "p") {
+
+                alert("Computer wins!");
+                computerWin = computerWin + 1;
+                document.getElementById("computerScore").innerText = computerWin;
+                // alert("Computer have " + computerWin + " win(s)!");
+
+            } else if (userResult === "r" && computerLetter === "s") {
+
+                alert("User Wins!");
+                userWin = userWin + 1;
+                document.getElementById("userScore").innerText = userWin;
+                // alert("User have " + userWin + " win(s)!");
+
+            } else if (userResult === "p" && computerLetter === "s") {
+
+                alert("Computer wins!");
+                computerWin = computerWin + 1;
+                document.getElementById("computerScore").innerText = computerWin;
+                // alert("Computer have " + computerWin + " win(s)!");
+
+            } else if (userResult === "p" && computerLetter === "r") {
+
+                alert("User Wins!");
+                userWin = userWin + 1;
+                document.getElementById("userScore").innerText = userWin;
+                // alert("User have " + userWin + " win(s)!");
+
+            } else if (userResult === "s" && computerLetter === "r") {
+
+                alert("Computer wins!");
+                computerWin = computerWin + 1;
+                document.getElementById("computerScore").innerText = computerWin;
+                // alert("Computer have " + computerWin + " win(s)!");
+
+            } else if (userResult === "s" && computerLetter === "p") {
+
+                alert("User Wins!");
+                userWin = userWin + 1;
+                document.getElementById("userScore").innerText = userWin;
+                // alert("User have " + userWin + " win(s)!");
+
+            }
+        }
+    </script>
+</body>
+
+</html>
